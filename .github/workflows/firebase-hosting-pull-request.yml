@@ -8,7 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ng build --prod
+        run: npm install
+      - name: Install angular cli
+        run: npm install -g @angular/cli
+      - name: Install dependencies
+        run: ng build --prod
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
