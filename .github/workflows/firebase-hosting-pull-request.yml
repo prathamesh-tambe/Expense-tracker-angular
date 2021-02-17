@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        run: npm install
+      - run: npm install
       - name: Install angular cli
         run: npm install -g @angular/cli
       - name: Install dependencies
